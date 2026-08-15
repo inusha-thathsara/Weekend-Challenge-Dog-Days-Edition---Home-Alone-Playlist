@@ -2,61 +2,68 @@
 
 [![React](https://img.shields.io/badge/React-18.3-61dafb?logo=react&logoColor=black)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.1-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![ElevenLabs](https://img.shields.io/badge/ElevenLabs-AI%20Voice-orange)](https://elevenlabs.io/)
+[![ElevenLabs](https://img.shields.io/badge/ElevenLabs-Turbo%20v2.5-orange)](https://elevenlabs.io/)
 [![Android](https://img.shields.io/badge/Android-Jetpack%20Compose-3DDC84?logo=android&logoColor=white)](https://developer.android.com/jetpack/compose)
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.0-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.1-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> A modern, multi-platform sensory comfort system designed to relieve canine separation anxiety when pets are left home alone. Combines personalized AI voice loops, owner voice recording, procedural soundscapes (pink-noise rain, rhythmic heartbeat, 432Hz ambient drone), and an intelligent interval timer.
+> A modern, multi-platform sensory comfort system engineered to alleviate canine separation anxiety when pets are left home alone. Combines personalized ultra-low latency AI voice loops (powered by ElevenLabs), owner voice recording, procedural audio soundscapes (pink-noise rain, rhythmic maternal heartbeat, 432Hz ambient drone), and an intelligent interval timer.
 
 ---
 
 ## 🌟 Key Features
 
-### 1. 🎙️ Comforting Voice Loops (AI & Real Voice)
-- **ElevenLabs AI Voice Synthesis**: Generates lifelike, gentle voice messages using top soothing voice models (*Rachel, Adam, Bella, Antoni, Domi, Elli*).
-- **Voice Customization**: Fine-tune stability and clarity sliders for the ultimate calming tone.
-- **In-Browser Voice Recorder**: Allows pet parents to record their own voice directly with microphone support.
-- **Zero-Config Fallback**: Built-in fallback to the browser's Web Speech API and native Android TTS when offline or without an API key.
+### 1. 🎙️ Comforting Voice Loops (AI & Owner Studio)
+- **ElevenLabs AI Voice Synthesis**: Generates lifelike, soothing voice messages using top voice models (*Rachel, Bella, Antoni, Domi, Elli*).
+- **High-Throughput Turbo Engine**: Utilizes ElevenLabs' `eleven_turbo_v2_5` model for ultra-low latency (<300ms) and high concurrency limits.
+- **Auto-Retry & Rate Limit Handling**: Automatic 1.5s exponential backoff retry mechanism with informative error feedback for API rate limits and character quotas.
+- **Voice Customization**: Fine-tune stability and clarity/similarity boost sliders for the ultimate calming tone.
+- **Owner Voice Studio**: Record personalized reassurance messages directly with microphone support and instant audio playback preview.
+- **Zero-Config Fallback**: Automatic graceful fallback to the browser's Web Speech API and native Android TTS when offline or without an API key.
 
 ### 2. 🌧️ Layered Procedural Soundscapes
-- **Real-Time Web Audio Engine**: Generates dynamic audio without relying on heavy external audio files.
-- **Pink-Noise Rainfall**: Blocks sudden outside noises (thunder, doorbells, street noise).
+- **Real-Time Sound Synthesis**: Generates clean, infinite audio dynamically without relying on heavy external audio files or internet streaming.
+- **Pink-Noise Rainfall**: Dampens abrupt outside noises (thunder, doorbells, street traffic).
 - **Maternal Heartbeat Simulator**: Rhythmic low-frequency pulse simulating a mother dog's calming heartbeat.
-- **432Hz / 528Hz Calming Drone**: Gentle harmonic resonance scientifically known to lower canine heart rates.
-- **Individual Mixer Channel Sliders**: Independent volume controls for voice, rain, heartbeat, drone, and master volume.
+- **432Hz / 528Hz Harmonic Drone**: Gentle sinusoidal resonance scientifically recognized to lower canine cortisol and heart rate.
+- **Independent Audio Mixer**: Full-channel volume controls for voice, rain, heartbeat, drone, and master volume.
 
 ### 3. ⏱️ Smart Session Scheduler & Interval Loops
-- **Departure Delay Timer**: Start calming audio after a set delay (e.g., 5 minutes after leaving).
-- **Voice Repeat Interval**: Automatically re-plays comforting voice phrases every $X$ minutes (e.g., every 3 minutes) to reassure the pet.
-- **Auto-Fade Duration**: Configurable overall session duration (15m, 30m, 1h, 2h, 4h) with smooth fade-out.
+- **Departure Delay Timer**: Delay audio playback (e.g., 5 minutes after owner leaves) to allow the pet to settle naturally.
+- **Voice Repeat Interval**: Automatically re-plays comforting voice phrases at configurable intervals (e.g., every 2–5 minutes).
+- **Auto-Fade Duration**: Configurable session duration (15m, 30m, 1h, 2h, 4h, or continuous Loop ♾️) with smooth fade-out.
 
-### 4. 🧘 Visual Rhythms & Player View
-- **Breathing Circle Visualizer**: Expanding and contracting visual guide paced for relaxation.
-- **Live Waveform & Countdown**: Real-time status indicators and remaining session duration clock.
+### 4. 🧘 Sensory Breathing Visualizer & Hero Controls
+- **Paced Breathing Visualizer**: Luminous multi-ring ripple visualizer calibrated for calming visual biofeedback.
+- **Dynamic Equalizer**: Live audio wave visualizer synchronized with active playback.
+- **One-Tap Quick Presets**: Instant configuration for common scenarios:
+  - ⛈️ *Thunder Shield* (Heavy pink rain + frequent reassurance)
+  - 🌙 *Bedtime Lullaby* (432Hz harmonic drone + gentle voice)
+  - 🚪 *Leaving Home* (Full audio blend + 5m departure delay)
+  - 🧘 *Quick Nap* (15-minute quick restorative session)
 
-### 5. 📱 Dual Platform Support
-- **Web App**: Responsive, dark-mode glassmorphic interface built with React + Vite + TailwindCSS.
-- **Android App**: Native Android app built with Jetpack Compose, Material 3, and an AndroidX Media3 foreground playback service for uninterrupted lock-screen audio playback.
+### 5. 📱 Dual Platform Architecture
+- **Web App**: Glassmorphic, dark-mode web application built with React 18, Vite 6, and Vanilla/Tailwind CSS.
+- **Android App**: Native Android app built with Jetpack Compose, Material 3, AndroidX Media3 (ExoPlayer), Jetpack DataStore, and a dedicated foreground playback service for uninterrupted background lock-screen playback.
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-├── .env.example                # Example environment variables template
+├── .env.example                # Environment variables template
 ├── .gitignore                  # Git ignore rules for Web and Android
-├── index.html                  # HTML entry point with modern typography
-├── package.json                # Web app dependencies & npm scripts
+├── index.html                  # Web app HTML entry point
+├── package.json                # Web app dependencies & scripts
 ├── vite.config.js              # Vite configuration
-├── src/                        # Web App Source Code
-│   ├── App.jsx                 # Main application state & layout
+├── src/                        # React Web App Source Code
+│   ├── App.jsx                 # Main layout & application state
 │   ├── main.jsx                # React root mount
-│   ├── index.css               # Design system, glassmorphism & animations
+│   ├── index.css               # Design system tokens, glassmorphism & animations
 │   ├── components/
-│   │   ├── ApiKeyModal.jsx     # ElevenLabs Voice settings & preset selector
-│   │   ├── Header.jsx          # Header with pet name tag & settings trigger
-│   │   ├── PhraseEditor.jsx    # Voice synthesis & phrase builder
+│   │   ├── ApiKeyModal.jsx     # ElevenLabs Voice settings modal
+│   │   ├── Header.jsx          # App header with pet name tag & settings trigger
+│   │   ├── PhraseEditor.jsx    # Voice synthesis & reassurance builder
 │   │   ├── PlayerView.jsx      # Playback controls & breathing visualizer
 │   │   ├── SoundscapeMixer.jsx # Multi-track volume mixer
 │   │   ├── TimerScheduler.jsx  # Duration & repeat interval sliders
@@ -68,10 +75,20 @@
     ├── app/
     │   └── src/main/java/com/pawspeace/
     │       ├── MainActivity.kt
-    │       ├── audio/          # Audio synthesizer & audio engine
-    │       ├── service/        # Media3 foreground playback service
-    │       ├── ui/             # Jetpack Compose UI components & theme
-    │       └── viewmodel/      # HomeViewModel & DataStore preferences
+    │       ├── audio/
+    │       │   ├── AudioSynthesizer.kt    # AudioTrack PCM procedural sound generator
+    │       │   └── VoiceRecorderHelper.kt # Android MediaRecorder audio studio
+    │       ├── data/
+    │       │   ├── ElevenLabsApi.kt       # Retrofit client with Turbo v2.5 model
+    │       │   └── PreferencesManager.kt  # Jetpack DataStore preferences
+    │       ├── service/
+    │       │   └── PlaybackService.kt     # Media3 foreground audio service
+    │       ├── ui/
+    │       │   ├── components/            # Compose components (Mixer, Editor, Timer, Visualizer)
+    │       │   ├── screens/HomeScreen.kt  # Main responsive dashboard
+    │       │   └── theme/                 # Dark luxury theme tokens & typography
+    │       └── viewmodel/
+    │           └── HomeViewModel.kt       # State management, auto-retry & playback preview
     ├── build.gradle.kts
     └── settings.gradle.kts
 ```
@@ -81,7 +98,7 @@
 ## 🚀 Web App Quick Start
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (version 18+ recommended)
+- [Node.js](https://nodejs.org/) (v18+ recommended)
 - (Optional) [ElevenLabs API Key](https://elevenlabs.io/)
 
 ### 1. Clone & Install Dependencies
@@ -100,7 +117,7 @@ Add your ElevenLabs API Key:
 ```env
 VITE_ELEVENLABS_API_KEY=your_elevenlabs_api_key_here
 ```
-*(Note: If no API key is provided, the application will gracefully fall back to the browser's built-in Web Speech synthesis.)*
+*(Note: If no API key is provided, the application gracefully falls back to the browser's built-in Web Speech synthesis.)*
 
 ### 3. Run Development Server
 ```bash
@@ -112,32 +129,42 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ```bash
 npm run build
 ```
-The optimized production bundle will be generated in the `dist/` directory.
 
 ---
 
 ## 📱 Android App Setup
 
+### Prerequisites
+- Android Studio Ladybug (2024.2+) or newer
+- JDK 17
+- Android SDK 35 (minSdk 26 — Android 8.0 Oreo or higher)
+
 ### In Android Studio:
 1. Open Android Studio.
 2. Select **Open** and choose the `android-app` folder inside this repository.
 3. Allow Gradle to sync dependencies.
-4. Run on an emulator or physical device running Android 8.0 (API 26) or higher.
+4. Run on an emulator or physical Android device.
+
+### Automatic API Key Sharing:
+The Android build system automatically reads `VITE_ELEVENLABS_API_KEY` from the root `.env` file at build time and injects it into `BuildConfig.DEFAULT_ELEVENLABS_API_KEY`. You can also configure or override your API key directly in the app's **Settings & Voice Studio** dialog.
 
 ### Command Line Build:
 ```bash
 cd android-app
-./gradlew assembleDebug
+./gradlew.bat assembleDebug
 ```
-The debug APK will be located at `android-app/app/build/outputs/apk/debug/app-debug.apk`.
+The compiled debug APK will be generated at:
+`android-app/app/build/outputs/apk/debug/app-debug.apk`
 
 ---
 
-## 🛠️ Built With
+## 🛠️ Tech Stack & Libraries
 
-- **Web**: React 18, Vite 6, TailwindCSS 4, Lucide React, Web Audio API, Web Speech API
-- **AI Audio**: ElevenLabs Text-to-Speech API
-- **Mobile**: Kotlin 2.0, Android Jetpack Compose, AndroidX Media3, AudioTrack Synthesizer, Jetpack DataStore
+- **Web**: React 18, Vite 6, Lucide React, Web Audio API, Web Speech API.
+- **AI Voice Engine**: ElevenLabs REST API (`eleven_turbo_v2_5`), Retrofit 2, OkHttp 4, Gson.
+- **Android UI & Core**: Kotlin 2.1, Jetpack Compose, Material 3, AndroidX Lifecycle / ViewModel.
+- **Android Background Audio**: AndroidX Media3 (ExoPlayer), AudioTrack Real-time Synthesizer, Foreground Service Media Playback.
+- **Persistence**: Jetpack DataStore Preferences.
 
 ---
 

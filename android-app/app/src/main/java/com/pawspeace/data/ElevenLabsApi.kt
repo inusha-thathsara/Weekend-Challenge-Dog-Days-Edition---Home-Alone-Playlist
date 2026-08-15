@@ -9,6 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.Header
+import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Streaming
@@ -17,13 +18,13 @@ import java.util.concurrent.TimeUnit
 data class VoiceSettings(
     val stability: Float = 0.75f,
     @SerializedName("similarity_boost") val similarityBoost: Float = 0.85f,
-    val style: Float = 0.15f,
+    val style: Float = 0.0f,
     @SerializedName("use_speaker_boost") val useSpeakerBoost: Boolean = true
 )
 
 data class TTSRequest(
     val text: String,
-    @SerializedName("model_id") val modelId: String = "eleven_multilingual_v2",
+    @SerializedName("model_id") val modelId: String = "eleven_turbo_v2_5",
     @SerializedName("voice_settings") val voiceSettings: VoiceSettings = VoiceSettings()
 )
 
@@ -43,6 +44,10 @@ val PRESET_VOICES = listOf(
 
 interface ElevenLabsService {
     @Streaming
+    @Headers(
+        "Accept: audio/mpeg",
+        "Content-Type: application/json"
+    )
     @POST("v1/text-to-speech/{voice_id}")
     suspend fun generateSpeech(
         @Header("xi-api-key") apiKey: String,
@@ -57,8 +62,9 @@ object ElevenLabsApiClient {
     private val okHttpClient = OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS)
         .readTimeout(60, TimeUnit.SECONDS)
+        .writeTimeout(30, TimeUnit.SECONDS)
         .addInterceptor(HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BASIC
+            level = HttpLoggingInterceptor.Level.HEADERS
         })
         .build()
 

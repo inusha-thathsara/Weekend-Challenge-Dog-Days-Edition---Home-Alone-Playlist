@@ -4,6 +4,17 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+val rootEnvFile = rootProject.file("../.env")
+var defaultApiKey = ""
+if (rootEnvFile.exists()) {
+    rootEnvFile.forEachLine { line ->
+        val trimmed = line.trim()
+        if (trimmed.startsWith("VITE_ELEVENLABS_API_KEY=")) {
+            defaultApiKey = trimmed.substringAfter("VITE_ELEVENLABS_API_KEY=").trim()
+        }
+    }
+}
+
 android {
     namespace = "com.pawspeace"
     compileSdk = 35
@@ -16,6 +27,7 @@ android {
         versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "DEFAULT_ELEVENLABS_API_KEY", "\"$defaultApiKey\"")
     }
 
     buildTypes {
@@ -36,6 +48,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
