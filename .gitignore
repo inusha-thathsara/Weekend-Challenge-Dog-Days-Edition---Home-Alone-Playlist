@@ -1,0 +1,38 @@
+# Node & Web
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+hs_err_pid*
+replay_pid*
+
+# Android / Gradle
+.gradle/
+build/
+*/build/
+app/build/
+local.properties
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+gradle/dists/
+*/gradle/dists/
+
+# Editor & OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.iml
+.DS_Store
+Thumbs.db

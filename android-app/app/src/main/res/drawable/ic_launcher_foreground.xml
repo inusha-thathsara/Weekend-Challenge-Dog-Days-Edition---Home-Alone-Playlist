@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:translateX="21.6"
+        android:translateY="21.6">
+        <!-- Paw Pad and Toes -->
+        <path
+            android:fillColor="#38BDF8"
+            android:pathData="M54,52c-8,0 -15,6 -15,14 0,7 6,13 15,13s15,-6 15,-13c0,-8 -7,-14 -15,-14z"/>
+        <path
+            android:fillColor="#818CF8"
+            android:pathData="M34,44c-3,0 -5.5,2.5 -5.5,5.5s2.5,5.5 5.5,5.5 5.5,-2.5 5.5,-5.5 -2.5,-5.5 -5.5,-5.5z"/>
+        <path
+            android:fillColor="#818CF8"
+            android:pathData="M74,44c-3,0 -5.5,2.5 -5.5,5.5s2.5,5.5 5.5,5.5 5.5,-2.5 5.5,-5.5 -2.5,-5.5 -5.5,-5.5z"/>
+        <path
+            android:fillColor="#A78BFA"
+            android:pathData="M43,30c-3,0 -5.5,2.5 -5.5,5.5s2.5,5.5 5.5,5.5 5.5,-2.5 5.5,-5.5 -2.5,-5.5 -5.5,-5.5z"/>
+        <path
+            android:fillColor="#A78BFA"
+            android:pathData="M65,30c-3,0 -5.5,2.5 -5.5,5.5s2.5,5.5 5.5,5.5 5.5,-2.5 5.5,-5.5 -2.5,-5.5 -5.5,-5.5z"/>
+    </group>
+</vector>

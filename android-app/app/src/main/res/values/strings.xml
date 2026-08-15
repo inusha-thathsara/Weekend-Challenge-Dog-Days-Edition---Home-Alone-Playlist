@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Paws &amp; Peace</string>
+    <string name="notification_channel_name">Calming Audio Playback</string>
+    <string name="notification_channel_desc">Playing soothing voice and ambient soundscapes for your dog</string>
+</resources>
