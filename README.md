@@ -1,5 +1,6 @@
 # 🐾 Paws & Peace — "Home Alone" Calming Dog Playlist & Companion System
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-000000?logo=vercel&logoColor=white)](https://weekend-challenge-dog-days-edition-phi.vercel.app)
 [![React](https://img.shields.io/badge/React-18.3-61dafb?logo=react&logoColor=black)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.1-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![ElevenLabs](https://img.shields.io/badge/ElevenLabs-Turbo%20v2.5-orange)](https://elevenlabs.io/)
@@ -8,6 +9,8 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A modern, multi-platform sensory comfort system engineered to alleviate canine separation anxiety when pets are left home alone. Combines personalized ultra-low latency AI voice loops (powered by ElevenLabs), owner voice recording, procedural audio soundscapes (pink-noise rain, rhythmic maternal heartbeat, 432Hz ambient drone), and an intelligent interval timer.
+
+🔗 **Live Web Application**: [https://weekend-challenge-dog-days-edition-phi.vercel.app](https://weekend-challenge-dog-days-edition-phi.vercel.app)
 
 ---
 
@@ -43,7 +46,7 @@
   - 🧘 *Quick Nap* (15-minute quick restorative session)
 
 ### 5. 📱 Dual Platform Architecture
-- **Web App**: Glassmorphic, dark-mode web application built with React 18, Vite 6, and Vanilla/Tailwind CSS.
+- **Web App**: Glassmorphic, dark-mode web application deployed on Vercel at [https://weekend-challenge-dog-days-edition-phi.vercel.app](https://weekend-challenge-dog-days-edition-phi.vercel.app).
 - **Android App**: Native Android app built with Jetpack Compose, Material 3, AndroidX Media3 (ExoPlayer), Jetpack DataStore, and a dedicated foreground playback service for uninterrupted background lock-screen playback.
 
 ---
@@ -55,6 +58,7 @@
 ├── .gitignore                  # Git ignore rules for Web and Android
 ├── index.html                  # Web app HTML entry point
 ├── package.json                # Web app dependencies & scripts
+├── vercel.json                 # Vercel SPA routing configuration
 ├── vite.config.js              # Vite configuration
 ├── src/                        # React Web App Source Code
 │   ├── App.jsx                 # Main layout & application state
@@ -95,39 +99,17 @@
 
 ---
 
-## 🚀 Web App Quick Start
+## 🌐 Live Web App & Deployment
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v18+ recommended)
-- (Optional) [ElevenLabs API Key](https://elevenlabs.io/)
+- **Live URL**: [https://weekend-challenge-dog-days-edition-phi.vercel.app](https://weekend-challenge-dog-days-edition-phi.vercel.app)
+- **Hosting Platform**: Vercel (Automated CI/CD from `main` branch)
 
-### 1. Clone & Install Dependencies
+### Local Development:
 ```bash
 git clone https://github.com/inusha-thathsara/Weekend-Challenge-Dog-Days-Edition---Home-Alone-Playlist.git
 cd Weekend-Challenge-Dog-Days-Edition---Home-Alone-Playlist
 npm install
-```
-
-### 2. Configure Environment Variables
-Create a `.env` file in the project root (or copy `.env.example`):
-```bash
-cp .env.example .env
-```
-Add your ElevenLabs API Key:
-```env
-VITE_ELEVENLABS_API_KEY=your_elevenlabs_api_key_here
-```
-*(Note: If no API key is provided, the application gracefully falls back to the browser's built-in Web Speech synthesis.)*
-
-### 3. Run Development Server
-```bash
 npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### 4. Build for Production
-```bash
-npm run build
 ```
 
 ---
@@ -138,12 +120,6 @@ npm run build
 - Android Studio Ladybug (2024.2+) or newer
 - JDK 17
 - Android SDK 35 (minSdk 26 — Android 8.0 Oreo or higher)
-
-### In Android Studio:
-1. Open Android Studio.
-2. Select **Open** and choose the `android-app` folder inside this repository.
-3. Allow Gradle to sync dependencies.
-4. Run on an emulator or physical Android device.
 
 ### Automatic API Key Sharing:
 The Android build system automatically reads `VITE_ELEVENLABS_API_KEY` from the root `.env` file at build time and injects it into `BuildConfig.DEFAULT_ELEVENLABS_API_KEY`. You can also configure or override your API key directly in the app's **Settings & Voice Studio** dialog.

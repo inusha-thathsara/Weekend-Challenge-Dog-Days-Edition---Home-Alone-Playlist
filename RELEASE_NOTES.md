@@ -1,8 +1,9 @@
-# 🐾 Paws & Peace Mobile — Release Notes v1.0.0
+# 🐾 Paws & Peace Mobile — Release Notes v2.0.0
 
-**Release Tag**: `v1.0.0-release`  
+**Release Tag**: `v2.0.0-release`  
 **Build Target**: Android 8.0 (API 26) – Android 15 (API 35)  
 **APK Output**: `android-app/app/build/outputs/apk/debug/app-debug.apk`  
+**Live Web Companion**: [https://weekend-challenge-dog-days-edition-phi.vercel.app](https://weekend-challenge-dog-days-edition-phi.vercel.app)
 
 ---
 
@@ -43,8 +44,8 @@
 ## 🛠️ Technical Specifications
 | Specification | Value |
 |---|---|
-| **Version Name** | `1.0.0` |
-| **Version Code** | `1` |
+| **Version Name** | `2.0.0` |
+| **Version Code** | `2` |
 | **Min SDK** | `API 26 (Android 8.0 Oreo)` |
 | **Target SDK** | `API 35 (Android 15)` |
 | **UI Framework** | Jetpack Compose (BOM 2024.12.01) + Material 3 |
