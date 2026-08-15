@@ -116,20 +116,6 @@ The optimized production bundle will be generated in the `dist/` directory.
 
 ---
 
-## 🌐 Deploying to Vercel
-
-You can deploy the web app to **Vercel** with zero configuration:
-
-1. Push this repository to your GitHub account.
-2. Go to [Vercel Dashboard](https://vercel.com/dashboard) and click **"Add New..."** → **"Project"**.
-3. Import this repository.
-4. Set the Environment Variable:
-   - **Name**: `VITE_ELEVENLABS_API_KEY`
-   - **Value**: *Your ElevenLabs API Key*
-5. Click **Deploy**.
-
----
-
 ## 📱 Android App Setup
 
 ### In Android Studio:
